@@ -1,0 +1,51 @@
+import discord,random
+from discord.ext import commands
+
+#DONT TRY TO OPEN BOT HERE
+#YOU LOOK STOOPID
+
+class UselessCommands(commands.Cog):
+    def __init__(self, client):
+        self.client = client
+
+   
+    @commands.command(name = "echo", help = 'you can make it say some weird shit')
+    async def echo(self,ctx,*,content:str):
+        await ctx.send(f'{content}')
+
+    @echo.error
+    async def echoerror(self,ctx,error):
+        if isinstance(error,commands.MissingRequiredArgument):
+            await ctx.send('actually put a word in dumb-fuck')
+
+    @commands.command(name = "loneliness", help = "when the only person willing to speak to u is a bot")
+    async def hello(self,ctx):    
+        await ctx.send(f'Hello {ctx.author}')
+    #Tells me in terminal when the bot can live
+
+    @commands.command(name = 'ask', help = 'ask the bot a question (only responds in yes no or maybe)')
+    async def ask(self,ctx,*,question:str):
+        #1 yes 2 no 3 mayb
+        answer = random.randint(1,3)
+        if answer == 1:
+            return await ctx.send("yes");
+        if answer == 2:
+            return await ctx.send("no");
+        if answer == 3:
+            return await ctx.send("mayb");
+         
+    @ask.error
+    async def askerror(self,ctx,error):
+        if isinstance(error,commands.MissingRequiredArgument):
+            await ctx.send("Ask a question dumb-fuck")
+
+    @commands.command(name = 'datoilet', help = 'taco bell')
+    async def embed(self,ctx):
+        embed = discord.Embed(
+        colour = discord.Colour.green()
+        )
+        embed.set_author(name=f'{ctx.author}')
+        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/509818248481603586/913153691178111046/3z57v6r0mk181.png')
+        embed.add_field(name='help mr men', value='i have taco bell')
+
+        await ctx.send(embed=embed)
