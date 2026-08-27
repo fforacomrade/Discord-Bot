@@ -16,9 +16,9 @@ async def load():
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.dnd, activity=discord.Game('ranibow sex sieg'))
+    await client.change_presence(status=discord.Status.dnd, activity=discord.Game('that'))
     #ea_sports = await client.fetch_user(476006484858109972)
-    #await ea_sports.send('boner nachos')
+    #await ea_sports.send('buenos noches')
     print('awake.')
 
 @client.command(name = 'ping', help = 'returns bots ping in ms')
