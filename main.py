@@ -2,7 +2,7 @@ import discord, sys, traceback, asyncio, os, random
 from discord.ext import commands
 from discord.ext.commands.errors import BadArgument
 
-token = 'OTE2NDM2NzU2ODEzOTc1NjI2.GF6YlJ.V5Z7AmgFnWQTML-mIYZU_lIE370AjchBZtMn3A'
+# can't go showing that token now can I
 intents = discord.Intents.all()
 intents.message_content = True
 client = discord.Client(intents=intents)
