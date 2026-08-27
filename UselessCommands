@@ -9,14 +9,14 @@ class UselessCommands(commands.Cog):
         self.client = client
 
    
-    @commands.command(name = "echo", help = 'you can make it say some weird shit')
+    @commands.command(name = "echo", help = 'you can make it say some weird stuff')
     async def echo(self,ctx,*,content:str):
         await ctx.send(f'{content}')
 
     @echo.error
     async def echoerror(self,ctx,error):
         if isinstance(error,commands.MissingRequiredArgument):
-            await ctx.send('actually put a word in dumb-fuck')
+            await ctx.send('actually put a word in dummy')
 
     @commands.command(name = "loneliness", help = "when the only person willing to speak to u is a bot")
     async def hello(self,ctx):    
@@ -37,7 +37,7 @@ class UselessCommands(commands.Cog):
     @ask.error
     async def askerror(self,ctx,error):
         if isinstance(error,commands.MissingRequiredArgument):
-            await ctx.send("Ask a question dumb-fuck")
+            await ctx.send("Ask a question dummy")
 
     @commands.command(name = 'datoilet', help = 'taco bell')
     async def embed(self,ctx):
